@@ -16,6 +16,15 @@ body{
         #menu{
             display: none;
         }
+        .overlay{
+            position: absolute;
+            z-index: -1;
+            top:40px;
+            background-color:rgba(0, 0, 0, 0.349);
+            width:100vw;
+            height:100vh;
+            display: none;
+        }
         nav{
             display: flex;
             flex-direction: row;
@@ -100,7 +109,12 @@ body{
                 }
             }
             #menu:checked ~ nav{
-                top:40px;
+                top:39px;
             }
+            #menu:checked ~.overlay{
+                display: block;
+
+            }
+            
         }
     }
