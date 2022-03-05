@@ -62,6 +62,7 @@ body header nav a:hover {
   font-size: 40px;
   -webkit-transition: .5s;
   transition: .5s;
+  color: #0278ff;
 }
 
 body header nav :nth-child(1) {
@@ -127,25 +128,36 @@ body header nav :nth-child(1) {
     border-radius: 3px;
     width: 100%;
     background-color: #02346e;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  body label .cross {
+    width: 0;
+    border: 0;
+    border: 3px solid #02346e;
+    position: absolute;
+  }
+  body label .hamburger {
+    opacity: 1;
+  }
+  body label:hover div {
+    border: 3px solid #0278ff;
+    background-color: #0278ff;
+  }
+  body #menu:checked ~ label .cross {
+    width: 100%;
+    bottom: 17px;
+  }
+  body #menu:checked ~ label .hamburger {
+    opacity: 0;
   }
   body #menu:checked ~ label :nth-child(1) {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    -webkit-transition: .5s;
-    transition: .5s;
-    position: absolute;
-    top: 17px;
   }
   body #menu:checked ~ label :nth-child(2) {
-    display: none;
-  }
-  body #menu:checked ~ label :nth-child(3) {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    -webkit-transition: .5s;
-    transition: .5s;
-    position: absolute;
-    bottom: 17px;
   }
   body #menu:checked ~ nav {
     top: 39px;
