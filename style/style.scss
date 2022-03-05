@@ -1,4 +1,4 @@
-$complementary_color:rgba(230, 251, 255, 0.85);
+$complementary_color:rgb(211, 237, 255);
 $font1:Advent Pro;
 $fontcolor1:rgb(2, 52, 110);
 
@@ -9,7 +9,6 @@ body{
     height: 200vh;
     header{
         display:flex;
-        align-items: center;
         justify-content: center;
         background-color:$complementary_color;
         position:sticky;
@@ -18,23 +17,23 @@ body{
             display: none;
         }
         nav{
-            padding:10px 0;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
              a{
-                margin:10px 20px;
+                margin:15px;
                 text-decoration: none;
                 font-family: $font1;
                 font-size: 30px;
+                vertical-align: center;
+                line-height: 40px;
                 color:$fontcolor1;
                 transition: .5s;
+                white-space: nowrap;
             }
             a:hover{
                 font-size:40px;
                 transition:.5s;
-                margin:0;
-                padding:0 20px;
             }
             :nth-child(1){
                  font-weight: 600;
@@ -48,8 +47,22 @@ body{
             justify-content: flex-end;
             flex-direction: row-reverse;
             nav{
-                a{
-                    display:none;
+                    flex-direction: column;
+                    position: absolute;
+                    top:-100vh;
+                    width:100vw;
+                    height:fit-content;
+                    z-index: -1;
+                    background-color: $complementary_color;
+                    transition:1s;
+                    a{
+                        line-height: 25px;
+                        font-size: 20px;
+                        margin:10px 8px;
+                    }
+                    a:hover{
+                        font-size:25px;
+                    }
                 }
             }         
             label{
@@ -57,8 +70,9 @@ body{
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-evenly;
-                width:50px;
-                height:50px;
+                width:40px;
+                height:40px;
+                position:relative;
                 cursor: pointer;
                 margin-left: 8px;
                 div{
@@ -69,12 +83,11 @@ body{
                 }
             }
             #menu:checked ~ label{
-                position:relative;
                 :nth-child(1){
                     transform: rotate(45deg);
                     transition: .5s;
                     position: absolute;
-                    top:22px;
+                    top:17px;
                 }
                 :nth-child(2){
                     display: none;
@@ -83,10 +96,11 @@ body{
                     transform: rotate(-45deg);
                     transition: .5s;
                     position:absolute;
-                    bottom:22px;
+                    bottom:17px;
                 }
-
+            }
+            #menu:checked ~ nav{
+                top:40px;
             }
         }
     }
-}

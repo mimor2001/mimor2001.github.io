@@ -9,13 +9,10 @@ body header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(230, 251, 255, 0.85);
+  background-color: #d3edff;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -26,7 +23,6 @@ body header #menu {
 }
 
 body header nav {
-  padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,21 +36,22 @@ body header nav {
 }
 
 body header nav a {
-  margin: 10px 20px;
+  margin: 15px;
   text-decoration: none;
   font-family: Advent Pro;
   font-size: 30px;
+  vertical-align: center;
+  line-height: 40px;
   color: #02346e;
   -webkit-transition: .5s;
   transition: .5s;
+  white-space: nowrap;
 }
 
 body header nav a:hover {
   font-size: 40px;
   -webkit-transition: .5s;
   transition: .5s;
-  margin: 0;
-  padding: 0 20px;
 }
 
 body header nav :nth-child(1) {
@@ -71,10 +68,31 @@ body header nav :nth-child(1) {
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
-  body header nav a {
-    display: none;
+  body header nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: -100vh;
+    width: 100vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    z-index: -1;
+    background-color: #d3edff;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
-  body header label {
+  body header nav a {
+    line-height: 25px;
+    font-size: 20px;
+    margin: 10px 8px;
+  }
+  body header nav a:hover {
+    font-size: 25px;
+  }
+  body label {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -88,38 +106,39 @@ body header nav :nth-child(1) {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    position: relative;
     cursor: pointer;
     margin-left: 8px;
   }
-  body header label div {
+  body label div {
     border: 3px solid #02346e;
     border-radius: 3px;
     width: 100%;
     background-color: #02346e;
   }
-  body header #menu:checked ~ label {
-    position: relative;
-  }
-  body header #menu:checked ~ label :nth-child(1) {
+  body #menu:checked ~ label :nth-child(1) {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transition: .5s;
     transition: .5s;
     position: absolute;
-    top: 22px;
+    top: 17px;
   }
-  body header #menu:checked ~ label :nth-child(2) {
+  body #menu:checked ~ label :nth-child(2) {
     display: none;
   }
-  body header #menu:checked ~ label :nth-child(3) {
+  body #menu:checked ~ label :nth-child(3) {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
     -webkit-transition: .5s;
     transition: .5s;
     position: absolute;
-    bottom: 22px;
+    bottom: 17px;
+  }
+  body #menu:checked ~ nav {
+    top: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */
